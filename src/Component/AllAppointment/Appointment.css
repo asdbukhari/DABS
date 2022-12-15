@@ -1,0 +1,10 @@
+.patientcard {
+	display: flex;
+	flex-direction: column;
+	width: 40%;
+	margin: auto;
+	margin-top: 3rem;
+	border: 2px solid brown;
+	padding: 1rem;
+	border-radius: 1rem;
+}
