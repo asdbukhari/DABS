@@ -9,9 +9,7 @@ function AllAppointment() {
 		const getData = async () => {
 			const userdata = [];
 			await axios
-				.get(
-					"https://final-react-6a6ca-default-rtdb.firebaseio.com/appointment.json"
-				)
+				.get(`${process.env.BASE_URL}/appointment.json`)
 				.then(res => {
 					const data = res.data;
 
@@ -56,10 +54,7 @@ function AllAppointment() {
 		};
 		console.log(data);
 		await axios
-			.put(
-				`https://final-react-6a6ca-default-rtdb.firebaseio.com/appointment/${data.patientId}.json`,
-				patientdata
-			)
+			.put(`${process.env.BASE_URL}/${data.patientId}.json`, patientdata)
 			.then(res => {
 				setgetData(true);
 			})
@@ -89,7 +84,7 @@ function AllAppointment() {
 				<>
 					{apointment.map((data, index) => {
 						return (
-							<div className="row container mt-3">
+							<div key={data.docEmail + index} className="row container mt-3">
 								<div
 									className="offset-lg-3 p-3 col-lg-7 bg-white text-center rounded"
 									key={index}>

@@ -22,9 +22,7 @@ function DoctorPage() {
 		const getData = async () => {
 			const appointmentData = [];
 			await axios
-				.get(
-					"https://final-react-6a6ca-default-rtdb.firebaseio.com/appointment.json"
-				)
+				.get(`${process.env.BASE_URL}/appointment.json`)
 				.then(res => {
 					const data = res.data;
 

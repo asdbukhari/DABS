@@ -16,9 +16,7 @@ function BookAppointment() {
 		const getData = async () => {
 			const appointmentData = [];
 			await axios
-				.get(
-					"https://final-react-6a6ca-default-rtdb.firebaseio.com/appointment.json"
-				)
+				.get(`${process.env.BASE_URL}/appointment.json`)
 				.then(res => {
 					const data = res.data;
 
@@ -97,10 +95,7 @@ function BookAppointment() {
 		};
 
 		await axios
-			.post(
-				"https://final-react-6a6ca-default-rtdb.firebaseio.com/appointment.json",
-				data
-			)
+			.post(`${process.env.BASE_URL}/appointment.json`, data)
 			.then(res => {
 				setgetData(true);
 				alert("Your Appointment has been noted Successfully");
