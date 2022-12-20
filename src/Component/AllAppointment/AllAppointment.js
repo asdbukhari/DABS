@@ -9,7 +9,9 @@ function AllAppointment() {
     const getData = async () => {
       const userdata = [];
       await axios
-        .get(`${process.env.BASE_URL}/appointment.json`)
+        .get(
+          `https://doctor-app-21ad1-default-rtdb.firebaseio.com/appointment.json`
+        )
         .then((res) => {
           const data = res.data;
 
@@ -53,7 +55,10 @@ function AllAppointment() {
     };
     console.log(data);
     await axios
-      .put(`${process.env.BASE_URL}/${data.patientId}.json`, patientdata)
+      .put(
+        `https://doctor-app-21ad1-default-rtdb.firebaseio.com/${data.patientId}.json`,
+        patientdata
+      )
       .then((res) => {
         setgetData(true);
       })

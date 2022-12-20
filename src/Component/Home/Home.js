@@ -11,7 +11,7 @@ function Home() {
     const getData = async () => {
       const userdata = [];
       await axios
-        .get(`${process.env.BASE_URL}/doctor.json`)
+        .get(`https://doctor-app-21ad1-default-rtdb.firebaseio.com/doctor.json`)
         .then((res) => {
           const data = res.data;
 
