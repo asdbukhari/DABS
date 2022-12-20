@@ -16,7 +16,9 @@ function BookAppointment() {
 		const getData = async () => {
 			const appointmentData = [];
 			await axios
-				.get(`${process.env.BASE_URL}/appointment.json`)
+				.get(
+					`https://doctor-app-21ad1-default-rtdb.firebaseio.com/appointment.json`
+				)
 				.then(res => {
 					const data = res.data;
 
@@ -95,7 +97,10 @@ function BookAppointment() {
 		};
 
 		await axios
-			.post(`${process.env.BASE_URL}/appointment.json`, data)
+			.post(
+				`https://doctor-app-21ad1-default-rtdb.firebaseio.com/appointment.json`,
+				data
+			)
 			.then(res => {
 				setgetData(true);
 				alert("Your Appointment has been noted Successfully");
