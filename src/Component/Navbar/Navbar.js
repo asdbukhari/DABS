@@ -5,7 +5,9 @@ function Navbar() {
 	return (
 		<nav className="navbar navbar-expand-lg  navbar-dark bg-dark">
 			<div className="container-fluid">
-				<a className="navbar-brand">Doctor Appointment System</a>
+				<Link className="navbar-brand" to="/">
+					Doctor Appointment System
+				</Link>
 				<button
 					className="navbar-toggler"
 					type="button"
