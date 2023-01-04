@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../Home/Home.css";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
@@ -100,7 +100,9 @@ function DoctorPage() {
 						</div>
 					);
 				})}
+
 			<h3 className="text-center mt-3"> Doctor History</h3>
+
 			{DoctorHistory.filter(data => data.docid == docId).length > 0 ? (
 				<>
 					<div className="d-flex justify-content-center mt-5">
