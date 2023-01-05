@@ -47,6 +47,7 @@ function AllAppointment() {
 	).length;
 
 	const accpectAppointment = async data => {
+		console.log({ data });
 		let patientdata = {
 			patientName: data.patientName,
 			docEmail: data.docEmail,
@@ -58,7 +59,7 @@ function AllAppointment() {
 		console.log(data, patientdata);
 		await axios
 			.put(
-				`https://doctor-app-21ad1-default-rtdb.firebaseio.com/${data.patientId}.json`,
+				`https://doctor-app-21ad1-default-rtdb.firebaseio.com/appointment/${data.patientId}.json`,
 				patientdata
 			)
 			.then(res => {

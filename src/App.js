@@ -21,7 +21,6 @@ function App() {
 				{isLoggedIn && (
 					<Route path="/allappointment" element={<AllAppointment />}></Route>
 				)}
-				{/* {!isLoggedIn && <Route path="allappointment" element={<><h2 className="text-center mt-5">You are not logged in</h2></>}></Route>} */}
 			</Routes>
 		</>
 	);
