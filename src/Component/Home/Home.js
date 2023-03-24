@@ -11,8 +11,8 @@ function Home() {
     const getData = async () => {
       const userdata = [];
       await axios
-        .get(`https://doctor-app-21ad1-default-rtdb.firebaseio.com/doctor.json`)
-        .then((res) => {
+        .get(`https://dabs-af423-default-rtdb.firebaseio.com/doctor.json`)
+        .then(res => {
           const data = res.data;
 
           setDocData(data);
@@ -31,7 +31,7 @@ function Home() {
             setDocData(userdata);
           }
         })
-        .catch((error) => {
+        .catch(error => {
           console.log(error);
         });
     };
@@ -39,7 +39,7 @@ function Home() {
     getData();
   }, []);
 
-  const changeroute = (id) => {
+  const changeroute = id => {
     console.log(id);
     navigate(`/doctor/${id}`);
   };
@@ -55,44 +55,27 @@ function Home() {
               <div className="d-flex align-items-center justify-content-center">
                 <h3>
                   Heart Specialist =
-                  {
-                    docData.filter(
-                      (data) => data.speciality === "Heart Specialist"
-                    ).length
-                  }
+                  {docData.filter(data => data.speciality === "Heart Specialist").length}
                 </h3>
                 <h3 className="mx-5">
                   Lung Specialist =
-                  {
-                    docData.filter(
-                      (data) => data.speciality === "Lung Specialist"
-                    ).length
-                  }
+                  {docData.filter(data => data.speciality === "Lung Specialist").length}
                 </h3>
                 <h3>
                   Eye Specialist =
-                  {
-                    docData.filter(
-                      (data) => data.speciality === "Eye Specialist"
-                    ).length
-                  }
+                  {docData.filter(data => data.speciality === "Eye Specialist").length}
                 </h3>
               </div>
               {docData.map((data, index) => {
                 const { id } = data;
                 return (
-                  <div
-                    onClick={() => changeroute(id)}
-                    className="col-md-4"
-                    key={index}
-                  >
+                  <div onClick={() => changeroute(id)} className="col-md-4" key={index}>
                     <div className="card p-2 py-3 text-center">
                       <div className=" mb-2">
                         {" "}
-                        <img className="img-fluid" src={data.image} />{" "}
+                        <img className="img-fluid" src={data.image} alt="" />{" "}
                       </div>
-                      <h5 className="mb-0">Dr.{data.name}</h5>{" "}
-                      <small>{data.speciality}</small>
+                      <h5 className="mb-0">Dr.{data.name}</h5> <small>{data.speciality}</small>
                       <div>
                         <p>{data.email}</p>
                       </div>

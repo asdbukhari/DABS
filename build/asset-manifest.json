@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/DABS/static/css/main.cdfd37ee.css",
+    "main.js": "/DABS/static/js/main.9bc18e95.js",
+    "index.html": "/DABS/index.html",
+    "main.cdfd37ee.css.map": "/DABS/static/css/main.cdfd37ee.css.map",
+    "main.9bc18e95.js.map": "/DABS/static/js/main.9bc18e95.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cdfd37ee.css",
+    "static/js/main.9bc18e95.js"
+  ]
+}

@@ -8,22 +8,18 @@ import AllAppointment from "./Component/AllAppointment/AllAppointment";
 import "./App.css";
 
 function App() {
-	const [isLoggedIn, setIsLoggedIn] = useState(true);
-	return (
-		<>
-			<Navbar></Navbar>
-			<Routes>
-				<Route path="/" element={<Home />} />
-				<Route path="/doctor/:id" element={<DoctorPage />}></Route>
-				<Route
-					path="/appointment/:id/:email"
-					element={<BookAppointment />}></Route>
-				{isLoggedIn && (
-					<Route path="/allappointment" element={<AllAppointment />}></Route>
-				)}
-			</Routes>
-		</>
-	);
+  const [isLoggedIn] = useState(true);
+  return (
+    <>
+      <Navbar></Navbar>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/doctor/:id" element={<DoctorPage />}></Route>
+        <Route path="/appointment/:id/:email" element={<BookAppointment />}></Route>
+        {isLoggedIn && <Route path="/allappointment" element={<AllAppointment />}></Route>}
+      </Routes>
+    </>
+  );
 }
 
 export default App;
